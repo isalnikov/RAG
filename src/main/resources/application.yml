@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:rag.db
+    driver-class-name: org.sqlite.JDBC
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+app:
+  sqlite:
+    vec-extension-path: ""
+  ollama:
+    base-url: http://localhost:11434
+    embedding-model: jeffh/multilingual-e5-small
+    chat-model: saiga_mistral_7b
+    connect-timeout-ms: 5000
+    read-timeout-ms: 120000
+  chunk:
+    min-similarity: 0.7
+    max-tokens: 500
+    overlap-tokens: 50
+  search:
+    top-k: 7
